@@ -4,6 +4,17 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 def load_data(messages_filepath, categories_filepath):
+
+    """
+Load and combine messages and categories datasets.
+
+Args:
+    messages_filepath (str): Path to the CSV file containing the messages dataset.
+    categories_filepath (str): Path to the CSV file containing the categories dataset.
+
+Returns:
+    pandas.DataFrame: A dataframe containing the merged data from the messages and categories datasets.
+"""
     # Load datasets
     messages = pd.read_csv(messages_filepath)
     categories = pd.read_csv(categories_filepath)
@@ -35,6 +46,17 @@ def load_data(messages_filepath, categories_filepath):
     return df
 
 def clean_data(df):
+
+    """
+Clean the dataframe by removing duplicates and converting category values to binary format.
+
+Args:
+    df (pandas.DataFrame): The merged dataframe containing messages and categories data.
+
+Returns:
+    pandas.DataFrame: A cleaned dataframe with duplicates removed and categories converted to binary values.
+"""
+    
     # Drop duplicates
     df2 = df.drop_duplicates(subset=['message'])
 
@@ -47,6 +69,18 @@ def clean_data(df):
     return df4
 
 def save_data(df, database_filepath):
+
+    """
+Save the cleaned dataframe to an SQLite database.
+
+Args:
+    df (pandas.DataFrame): The cleaned dataframe containing the merged messages and categories data.
+    database_filename (str): The name of the SQLite database file to save the data.
+
+Returns:
+    None
+"""
+
     engine = create_engine('sqlite:///' + str(database_filepath))
     df.to_sql('MessagesCategories', engine, index=False, if_exists='replace')
 
