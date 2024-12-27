@@ -1,2 +1,30 @@
- Set up project structure and added README file.
- ML pipeline and app for classifying disaster response messages.
+Initial Setup:
+
+Initial commit: Set up project structure and added README file.
+Data Processing:
+
+Add data processing script to clean and merge datasets.
+ETL Implementation:
+
+Implement ETL process to load and clean disaster response data.
+Model Training:
+
+Develop and train classification model using scikit-learn.
+Web App Development:
+
+Create Flask web app with basic routing and templates.
+Visualization:
+
+Add visualizations to the web app for data insights.
+Testing:
+
+Write unit tests for data processing functions.
+Documentation:
+
+Update README with project overview and setup instructions.
+Bug Fixes:
+
+Fix bug in data cleaning function causing incorrect data types.
+Final Touches:
+
+Finalize project: improve documentation and code comments.
