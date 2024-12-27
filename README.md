@@ -62,7 +62,7 @@ At its core, the app leverages a machine learning model to automatically categor
   Open a browser and go to http://0.0.0.0:3001/ to access the web app.
 
 
-## Outputs ✔️
+## Results✔️
 
 - Upon successful execution, the code is expected to generate output visually resembling the provided screenshots.
 
